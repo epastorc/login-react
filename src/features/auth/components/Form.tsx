@@ -3,6 +3,8 @@ import { Form, FormikProps, Field, withFormik, ErrorMessage } from 'formik';
 import { User } from 'AuthModels';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import { RootState } from 'MyTypes';
+
 import { loginUserArticleAsync } from '../actions';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -29,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
 
 type FormValues = Pick<User, 'name' | 'password'> & {};
 
+const mapStateToProps = (state: RootState) => ({
+    isLoading: state.auth.isLoadingLogin
+  });
+
 const dispatchProps = {
     createLoginUser: (values: FormValues) =>
         loginUserArticleAsync.request({
@@ -36,12 +42,12 @@ const dispatchProps = {
         })
 };
 
-type Props = typeof dispatchProps & {
+type Props = ReturnType<typeof mapStateToProps> & typeof dispatchProps & {
     user?: User;
 };
 
 const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
-    const { isSubmitting, dirty } = props;
+    const { isSubmitting, dirty, isLoading } = props;
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -73,7 +79,7 @@ const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
                 </div>
 
                 <button className={classes.submit} type="submit" disabled={!dirty || isSubmitting}>
-                    {isSubmitting ? 'Loading' : 'Submit'  }
+                    {isLoading ? 'Loading' : 'Submit'  }
         </button>
             </Form>
         </div>
@@ -82,7 +88,7 @@ const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
 
 export default compose(
     connect(
-        null,
+        mapStateToProps,
         dispatchProps
     ),
     withFormik<Props, FormValues>({
