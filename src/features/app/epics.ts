@@ -18,7 +18,7 @@ export const persistArticlesInLocalStorage: RootEpic = (
       ])
     ),
     tap(_ => {
-      localStorage.set('user', store.value.auth.user);
+      localStorage.set('user', store.value.auth.token);
     }),
     ignoreElements()
   );

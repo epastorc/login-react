@@ -11,7 +11,7 @@ export const loginUserArticleAsync = createAsyncAction(
   'CREATE_LOGIN_REQUEST',
   'CREATE_LOGIN_SUCCESS',
   'CREATE_LOGOUT_FAILURE'
-)<User, User, string>();
+)<User, string, string>();
 
 export const redirectToHome = createAsyncAction(
   'REDIRECT_REQUEST',

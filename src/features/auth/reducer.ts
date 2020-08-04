@@ -17,15 +17,16 @@ const reducer = combineReducers({
       [loginUserArticleAsync.success],
       (state, action) => false
     ),
-  user: createReducer({} as User)
+  token: createReducer('' as string)
     .handleAction(
-      [loadUserAsync.success, loginUserArticleAsync.success],
-      (state, action) => action.payload
-    )
-    .handleAction(
-      loginUserArticleAsync.request,
+      [loginUserArticleAsync.success],
       (state, action) => action.payload
     ),
+  user: createReducer({} as User)
+  .handleAction(
+    [loadUserAsync.success],
+    (state, action) => action.payload
+  ),
 });
 
 export default reducer;
