@@ -11,6 +11,12 @@ const reducer = combineReducers({
       [loginUserArticleAsync.success, loginUserArticleAsync.failure],
       (state, action) => false
     ),
+  error: createReducer(false as boolean)
+    .handleAction([loginUserArticleAsync.failure], (state, action) => true)
+    .handleAction(
+      [loginUserArticleAsync.success],
+      (state, action) => false
+    ),
   user: createReducer({} as User)
     .handleAction(
       [loadUserAsync.success, loginUserArticleAsync.success],

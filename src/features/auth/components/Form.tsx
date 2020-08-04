@@ -20,11 +20,20 @@ const useStyles = makeStyles((theme) => ({
     form: {
         padding: '2%',
         border: '1px solid grey',
-        borderRadius: '4px'
+        borderRadius: '4px',
+        width: '15%'
+    },
+    input: {
+        width: '98%',
+        marginBottom: '15px'
     },
     submit: {
         width:'100%',
         marginTop: '10px'
+    },
+    error: {
+        margin: '0',
+        color: 'red'
     }
   }));
   
@@ -32,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
 type FormValues = Pick<User, 'name' | 'password'> & {};
 
 const mapStateToProps = (state: RootState) => ({
-    isLoading: state.auth.isLoadingLogin
+    isLoading: state.auth.isLoadingLogin,
+    error: state.auth.error,
   });
 
 const dispatchProps = {
@@ -47,15 +57,20 @@ type Props = ReturnType<typeof mapStateToProps> & typeof dispatchProps & {
 };
 
 const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
-    const { isSubmitting, dirty, isLoading } = props;
+    const { isSubmitting, dirty, isLoading, error } = props;
     const classes = useStyles();
     return (
         <div className={classes.root}>
+            
             <Form className={classes.form}>
+            <div>
+                {error && <p className={classes.error}>There are some issues in the login</p>}
+            </div>
                 <div >
                     <label htmlFor="name">Login</label>
                     <br />
                     <Field
+                        className={classes.input}
                         name="name"
                         placeholder="Email"
                         component="input"
@@ -69,6 +84,7 @@ const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
                     <label htmlFor="password">Password</label>
                     <br />
                     <Field
+                        className={classes.input}
                         name="password"
                         placeholder="Password"
                         component="input"
@@ -77,7 +93,6 @@ const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
                     />
                     <ErrorMessage name="password" />
                 </div>
-
                 <button className={classes.submit} type="submit" disabled={!dirty || isSubmitting}>
                     {isLoading ? 'Loading' : 'Submit'  }
         </button>
