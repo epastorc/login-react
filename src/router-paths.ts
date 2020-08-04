@@ -1,6 +1,8 @@
 const pathsMap = {
   home: () => '/',
-  dashboard: () => '/dashboard'
+  main: () => '/main/',
+  dashboard: () => '/main/dashboard',
+  setting: () => '/main/setting',
 };
 type PathsMap = typeof pathsMap;
 

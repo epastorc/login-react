@@ -1,0 +1,25 @@
+import React, { FC } from 'react';
+import { connect } from 'react-redux';
+import { RootState } from 'MyTypes';
+import MainLayout from '../layouts/MainLayout';
+import DashBoard from '../routes/Dashboard';
+import Setting from '../routes/Setting';
+import * as selectors from '../features/auth/selectors';
+import {  Route } from 'react-router-dom';
+import { getPath } from '../router-paths';
+
+const mapStateToProps = (state: RootState) => ({
+  user: selectors.getUser(state)
+});
+const dispatchProps = {};
+
+type Props = ReturnType<typeof mapStateToProps> & typeof dispatchProps;
+
+const Main: FC<Props> = ({ user: user = { name: '', password: '' } }) => (
+  <MainLayout name={user.name}>
+      <Route path={getPath('dashboard')}render={DashBoard} />
+      <Route path={getPath('setting')} render={Setting} />
+  </MainLayout>
+);
+
+export default connect(mapStateToProps, {})(Main);

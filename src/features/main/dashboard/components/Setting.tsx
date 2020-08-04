@@ -11,10 +11,10 @@ const dispatchProps = {};
 
 type Props = ReturnType<typeof mapStateToProps> & typeof dispatchProps;
 
-const DashBoardContent: React.FC<Props> = ({ user: user = { name: '', password: ''} }) => {
+const Setting: React.FC<Props> = ({ user: user = { name: '', password: ''} }) => {
 return (
   <div>
-    dashboard
+    settings
     {user.name}
     {user.password}
   </div>
@@ -24,4 +24,4 @@ return (
 export default connect(
   mapStateToProps,
   dispatchProps
-)(DashBoardContent);
+)(Setting);

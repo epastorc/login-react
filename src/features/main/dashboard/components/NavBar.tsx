@@ -88,12 +88,12 @@ const NavBar: React.FC<Props> = ({ name }) => {
             
             <Button
             >
-               <Link to="/">
+               <Link to="/main/dashboard">
                   Home
                 </Link>
               </Button>
             <Button>
-              <Link to="/dashboard">
+              <Link to="/main/setting">
               Settings
                 </Link>
             </Button>

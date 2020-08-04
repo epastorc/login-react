@@ -7,7 +7,7 @@ type Props = {
   name: string
 };
 
-const Main: FC<Props> = ({ children, name }) => (
+const MainLayout: FC<Props> = ({ children, name }) => (
   <div className="App">
     <header>
       <NavBar name={name} />
@@ -16,4 +16,4 @@ const Main: FC<Props> = ({ children, name }) => (
   </div>
 );
 
-export default Main;
+export default MainLayout;
