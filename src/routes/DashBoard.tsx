@@ -1,9 +1,9 @@
 import React from 'react';
 
-import DashBoard from '../features/main/dashboard/components/DashBoard';
+import DashboardContent from '../features/main/dashboard/main/page/DashBoardContent';
 
 export default () => (
-    <DashBoard/>
+    <DashboardContent/>
 );
 
 

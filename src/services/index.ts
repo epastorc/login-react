@@ -1,5 +1,6 @@
 import * as logger from './logger-service';
 import * as login from './login-service';
+import * as fatCatsService from './api/fact-cats-service';
 import * as toast from './toast-service';
 import * as localStorage from './local-storage-service';
 
@@ -8,6 +9,7 @@ export default {
   localStorage,
   toast,
   api: {
-    login
+    login,
+    fatCatsService
   },
 };

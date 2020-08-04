@@ -11,7 +11,7 @@ import PrivateRoute from './components/GuardedRoute';
 import * as selectors from './features/auth/selectors';
 
 const mapStateToProps = (state: RootState) => ({
-  token: selectors.getToken(state),
+  user: selectors.getUser(state),
 });
 const dispatchProps = {};
 
@@ -24,7 +24,7 @@ class Routes extends Component<Props, {}> {
     return (
       <Switch>
         <Route exact path={getPath('home')} render={Home} />
-        <PrivateRoute path={getPath('main')}  isSignedIn={this.props.token !== ''} component={Main} />
+        <PrivateRoute path={getPath('main')}  isSignedIn={this.props.user.name !== ''} component={Main} />
         <Route render={() => <div>Page not found!</div>} />
       </Switch>
     );
