@@ -13,8 +13,8 @@ const FactCatList: React.FC<Props> = ({ factcat }) => {
       <h3>List of fact cats</h3>
 
       <div style={{ width: '50vw'}}>
-          {factcat.map(fact => (
-              <FatCatItem factcat={fact}/>
+          {factcat.map((fact, index) => (
+              <FatCatItem factcat={fact} header={`Fact ${index + 1}:`}/>
           ))}
       </div>
     </div>

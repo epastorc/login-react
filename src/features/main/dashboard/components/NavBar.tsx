@@ -6,8 +6,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import ButtonGroup  from '@material-ui/core/ButtonGroup';
-import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
 
@@ -18,13 +16,6 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     paddingRight: 24,
   },
-  toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -33,40 +24,22 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   appBarShift: {
+    backgroundColor:'#f7b500',
     width: '100%',
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
-  menuButton: {
-    marginRight: 36,
-  },
-  menuButtonHidden: {
-    display: 'none',
+  link:{
+    color:'black',
+    marginRight:'10px',
+    fontSize: '1.3rem'
   },
   title: {
     flexGrow: 1,
   },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    height: '100vh',
-    overflow: 'auto',
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    display: 'flex',
-    overflow: 'auto',
-    flexDirection: 'column',
-  },
-  fixedHeight: {
-    height: 240,
-  },
+  appBarSpacer: theme.mixins.toolbar
 }));
 
 type Props = {
@@ -79,31 +52,23 @@ const NavBar: React.FC<Props> = ({ name }) => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" className={clsx(classes.appBar, classes.appBarShift)}>
+      <AppBar position="absolute" color={'inherit'} className={clsx(classes.appBar, classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Dashboard
           </Typography>
-          <ButtonGroup color="secondary" aria-label="outlined primary button group">
-            
-            <Button
-            >
-               <Link to="/main/dashboard">
-                  Home
-                </Link>
-              </Button>
-            <Button>
-              <Link to="/main/setting">
-              Settings
-                </Link>
-            </Button>
-          </ButtonGroup>
-          <Typography component="h5" variant="h6" color="inherit" noWrap>
+          <Link className={classes.link} to="/main/dashboard">
+            Home
+          </Link>
+          <Link className={classes.link}to="/main/setting">
+            Settings
+          </Link>
+          <span>
             {name}
-          </Typography>
+          </span>
         </Toolbar>
       </AppBar>
-    </div>
+    </div >
   );
 };
 

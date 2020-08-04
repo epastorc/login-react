@@ -5,12 +5,13 @@ import { FactCat } from 'DashboardModels';
 
 type Props = {
   factcat: FactCat;
+  header: string
 };
 
-const FatCatItem = React.memo<Props> (({ factcat }) => {
+const FatCatItem = React.memo<Props> (({ factcat, header }) => {
   return (
     <div>
-      <h3>Text</h3>
+      <h3>{header}</h3>
 
       <p>{factcat.text}</p>
     </div>
