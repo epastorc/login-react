@@ -1,5 +1,6 @@
 import React from 'react';
 import { FactAnimal } from 'DashboardModels';
+import Typography from '@material-ui/core/Typography';
 
 import FactAnimalItem  from '../../components/FactAnimalItem';
 
@@ -11,8 +12,9 @@ const FactDogList: React.FC<Props> = ({ factcat }) => {
   const header = 'List of fact about dogs';
   return (
     <div className="container-list">
-      <h3>{header}</h3>
-
+      <Typography component="h1" variant="h6" color="inherit" noWrap>
+        {header}
+      </Typography>
       <div style={{ width: '50vw'}}>
           {factcat.map((fact, index) => (
               <FactAnimalItem key={`factdogitem-${index}`} factanimal={fact} header={`Fact Dog ${index + 1}:`}/>
