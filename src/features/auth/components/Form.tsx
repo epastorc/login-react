@@ -119,13 +119,11 @@ export default compose(
     ),
     withFormik<Props, FormValues>({
         enableReinitialize: true,
-        // initialize values
         mapPropsToValues: ({ user: data }) => ({
             name: (data && data.name) || '',
             password: (data && data.password) || '',
         }),
         handleSubmit: (values, form) => {
-            //form.props.createLoginUser(values);
             form.props.createLoginUser(values);
             form.setSubmitting(false);
         },

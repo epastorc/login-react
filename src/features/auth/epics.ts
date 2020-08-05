@@ -40,7 +40,7 @@ export const createAuthEpic: RootEpic = (action$, state$, { api }) =>
 
   export const redirectTo: RootEpic = (action$, state$, { api }) =>
   action$.pipe(
-    filter(isActionOf(loginUserArticleAsync.success)),
+    filter(isActionOf([loginUserArticleAsync.success, loadUserAsync.success])),
     switchMap(() => {
       store.dispatch(push('/main/dashboard'))
       return of(redirectToHome.success());
