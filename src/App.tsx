@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { loadUserAsync } from './features/auth/state/actions';
 import { ConnectedRouter } from 'connected-react-router';
+
+import { loadUserAsync } from './features/auth/state/actions';
 import store, { history } from './store';
 import Routes from './Route';
 
