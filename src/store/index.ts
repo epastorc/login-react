@@ -1,7 +1,7 @@
 import { RootAction, RootState, Services } from 'RootType';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 import { routerMiddleware } from 'connected-react-router';
 
 import { composeEnhancers } from './utils';
@@ -19,7 +19,7 @@ export const epicMiddleware = createEpicMiddleware<
 });
 
 // configure middlewares
-export const history = createBrowserHistory();
+export const history = createHashHistory();
 const middlewares = [routerMiddleware(history), epicMiddleware];
 // compose enhancers
 const enhancer = composeEnhancers(applyMiddleware(...middlewares));
