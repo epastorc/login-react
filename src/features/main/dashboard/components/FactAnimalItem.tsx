@@ -9,11 +9,11 @@ type Props = {
 
 const FactAnimalItem = React.memo<Props> (({ factanimal, header }) => {
   return (
-    <div>
+    <React.Fragment>
       <h3>{header}</h3>
 
       <p>{factanimal.text}</p>
-    </div>
+    </React.Fragment>
   );
 }, areEqual);
 

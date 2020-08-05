@@ -22,10 +22,10 @@ class Routes extends Component<Props> {
   render() {
     const { isSignedIn }  = this.props;
     return (
-      <div>
+      <React.Fragment>
         <Route exact path={getPath('home')} render={Home} />
         <GuardedRoute path={getPath('main')}  isSignedIn={isSignedIn} component={Main} />
-      </div>
+      </React.Fragment>
     );
   }
 }
