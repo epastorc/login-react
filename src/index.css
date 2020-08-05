@@ -25,3 +25,13 @@ a:hover,
 .link:hover {
   text-decoration: underline;
 }
+
+.container-list {
+  margin-top: 80px;
+  background-color: #ffffff;
+  padding: 3%;
+  height: 75vh;
+  width: 64vw;
+  overflow-y: auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}

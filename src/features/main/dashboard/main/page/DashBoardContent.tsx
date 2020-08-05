@@ -23,11 +23,7 @@ class DashboardContent extends Component<Props> {
     }
     render() {
         const { factcat, isLoading } = this.props;
-        return (
-            <React.Fragment>
-                {isLoading ? <ReactLoading color={'spin'} height={40} width={40} /> : <FactCatList factcat={factcat} />}
-            </React.Fragment>
-        )
+        return isLoading ? <ReactLoading color={'#f7b500'} height={200} width={200} /> : <FactCatList factcat={factcat} />; 
     }
 }
 

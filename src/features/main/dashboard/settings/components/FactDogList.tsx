@@ -8,9 +8,9 @@ type Props = {
 };
 
 const FactDogList: React.FC<Props> = ({ factcat }) => {
-  const header = 'List of fact dogs';
+  const header = 'List of fact about dogs';
   return (
-    <div>
+    <div className="container-list">
       <h3>{header}</h3>
 
       <div style={{ width: '50vw'}}>

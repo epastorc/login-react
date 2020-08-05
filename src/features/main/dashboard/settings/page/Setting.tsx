@@ -25,11 +25,7 @@ class Setting extends Component<Props> {
     }
     render() {
         const { factdogs, isLoading } = this.props;
-        return (
-            <div>
-                {isLoading && factdogs.length > 0 ? <ReactLoading color={'spin'} height={40} width={40} /> : <FactDogList factcat={factdogs} />}
-            </div>
-        )
+        return isLoading && factdogs.length > 0 ? <ReactLoading color={'#f7b500'} height={200} width={200} /> : <FactDogList factcat={factdogs} />;
     }
 }
 

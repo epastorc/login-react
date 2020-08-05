@@ -10,8 +10,8 @@ type Props = {
 
 const FactCatList: React.FC<Props> = ({ factcat }) => {
   return (
-    <div>
-      <h3>List of fact cats</h3>
+    <div className="container-list">
+      <h3>List of fact about cats</h3>
 
       <div style={{ width: '50vw'}}>
           {factcat.map((fact, index) => (
