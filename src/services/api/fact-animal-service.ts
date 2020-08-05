@@ -1,5 +1,6 @@
-import ApiGeneric  from './api.service';
 import { FactAnimal } from 'DashboardModels';
+
+import ApiGeneric  from './api.service';
 import { URL_API_FACT_CAT } from './api.constants';
 
  class FactAnimalApi extends  ApiGeneric{

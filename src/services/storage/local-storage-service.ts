@@ -1,5 +1,5 @@
 const version = process.env.APP_VERSION || 0;
-const PREFIX = `MY_APP_v${version}::`;
+const PREFIX = `LOGIN_APP_v${version}::`;
 
 export function set<T = object>(key: string, value: T): void {
   if (!localStorage) {

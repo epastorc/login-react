@@ -1,5 +1,4 @@
 import { RootState } from 'RootType';
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
@@ -25,9 +24,9 @@ class DashboardContent extends Component<Props> {
     render() {
         const { factcat, isLoading } = this.props;
         return (
-            <div>
+            <React.Fragment>
                 {isLoading ? <ReactLoading color={'spin'} height={40} width={40} /> : <FactCatList factcat={factcat} />}
-            </div>
+            </React.Fragment>
         )
     }
 }

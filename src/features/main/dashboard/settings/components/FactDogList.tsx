@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { FactAnimal } from 'DashboardModels';
+
 import FactAnimalItem  from '../../components/FactAnimalItem';
 
 type Props = {

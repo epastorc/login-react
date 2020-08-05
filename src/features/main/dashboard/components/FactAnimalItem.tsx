@@ -1,6 +1,5 @@
 import React from 'react';
 import areEqual from 'fast-deep-equal';
-
 import { FactAnimal } from 'DashboardModels';
 
 type Props = {

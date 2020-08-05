@@ -1,7 +1,7 @@
 import { RootEpic } from 'RootType';
 import { tap, ignoreElements, filter } from 'rxjs/operators';
-
 import { isActionOf } from 'typesafe-actions';
+
 import {
   loginUserArticleAsync
 } from '../auth/state/actions';

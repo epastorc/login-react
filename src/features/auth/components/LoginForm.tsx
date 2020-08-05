@@ -2,7 +2,6 @@ import React from 'react';
 import { Form, FormikProps, Field, withFormik, ErrorMessage } from 'formik';
 import { User } from 'AuthModels';
 import { compose } from 'redux';
-
 import { makeStyles } from '@material-ui/core/styles';
 
 

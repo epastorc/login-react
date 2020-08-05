@@ -1,8 +1,9 @@
 import { User, JwtToken } from 'AuthModels';
+
 import { app } from './firebase-conf';
-import * as localStorage from './local-storage-service';
-import loggerService from './logger-service';
-import * as decodeService from './decoder-jwt-service';
+import * as localStorage from '../storage/local-storage-service';
+import loggerService from '../logger/logger-service';
+import * as decodeService from '../jwt/decoder-jwt-service';
 
 export async function login(user: User): Promise<string> {
   try {
