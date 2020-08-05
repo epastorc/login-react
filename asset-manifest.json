@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/login-react/static/css/main.b889c8f2.chunk.css",
-    "main.js": "/login-react/static/js/main.993664c6.chunk.js",
-    "main.js.map": "/login-react/static/js/main.993664c6.chunk.js.map",
+    "main.js": "/login-react/static/js/main.90bc035a.chunk.js",
+    "main.js.map": "/login-react/static/js/main.90bc035a.chunk.js.map",
     "runtime~main.js": "/login-react/static/js/runtime~main.6f10b612.js",
     "runtime~main.js.map": "/login-react/static/js/runtime~main.6f10b612.js.map",
     "static/css/2.c489bcc4.chunk.css": "/login-react/static/css/2.c489bcc4.chunk.css",
     "static/js/2.ae429d0a.chunk.js": "/login-react/static/js/2.ae429d0a.chunk.js",
     "static/js/2.ae429d0a.chunk.js.map": "/login-react/static/js/2.ae429d0a.chunk.js.map",
     "index.html": "/login-react/index.html",
-    "precache-manifest.087182af678b54fb1fa2d440960b8945.js": "/login-react/precache-manifest.087182af678b54fb1fa2d440960b8945.js",
+    "precache-manifest.3f3cae21e69a729cf8f684085a43eb10.js": "/login-react/precache-manifest.3f3cae21e69a729cf8f684085a43eb10.js",
     "service-worker.js": "/login-react/service-worker.js",
     "static/css/2.c489bcc4.chunk.css.map": "/login-react/static/css/2.c489bcc4.chunk.css.map",
     "static/css/main.b889c8f2.chunk.css.map": "/login-react/static/css/main.b889c8f2.chunk.css.map"
