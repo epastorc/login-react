@@ -23,7 +23,6 @@ class Routes extends Component<Props> {
     const { isSignedIn }  = this.props;
     return (
       <div>
-        {this.props.isSignedIn}
         <Route exact path={getPath('home')} render={Home} />
         <PrivateRoute path={getPath('main')}  isSignedIn={isSignedIn} component={Main} />
       </div>

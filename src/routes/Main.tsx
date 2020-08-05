@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { RootState } from 'RootType';
 import MainLayout from '../layouts/MainLayout';
-import DashBoard from '../routes/Dashboard';
+import DashBoard from '../routes/DashBoard';
 import Setting from '../routes/Setting';
 import * as selectors from '../features/auth/selectors';
 import {  Route } from 'react-router-dom';

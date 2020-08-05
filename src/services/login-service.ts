@@ -20,6 +20,10 @@ export async function login(user: User): Promise<string> {
 
 export async function loadUser(): Promise<User> {
   const token: string = localStorage.get<string>('user') || '';
-  const parseToken: JwtToken = decodeService.decode(token);
-  return { name: parseToken.email, password: '' };
+  if(token){
+    const parseToken: JwtToken = decodeService.decode(token);
+    return { name: parseToken.email, password: '' };
+  }else {
+    throw new Error();
+  }
 }

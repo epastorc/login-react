@@ -1,5 +1,5 @@
 const pathsMap = {
-  home: () => '/login',
+  home: () => '/',
   main: () => '/main/',
   dashboard: () => '/main/dashboard',
   setting: () => '/main/setting',
