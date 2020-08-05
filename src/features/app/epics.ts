@@ -4,7 +4,7 @@ import { tap, ignoreElements, filter } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 import {
   loginUserArticleAsync
-} from '../auth/actions';
+} from '../auth/state/actions';
 
 export const persistArticlesInLocalStorage: RootEpic = (
   action$,

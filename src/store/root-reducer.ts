@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 
-import auth from '../features/auth/reducer';
+import auth from '../features/auth/state/reducer';
 import factcat from '../features/main/dashboard/main/store/reducer';
 import factdog from '../features/main/dashboard/settings/store/reducer';
 

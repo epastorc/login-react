@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Form from '../features/auth/components/Form';
+import Login from '../features/auth/page/Login';
 
 export default () => (
-    <Form/>
+    <Login/>
 );
 
 

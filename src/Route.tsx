@@ -8,7 +8,7 @@ import Home from './routes/Home';
 import Main from './routes/Main';
 import { getPath } from './router-paths';
 import GuardedRoute from './components/GuardedRoute';
-import * as selectors from './features/auth/selectors';
+import * as selectors from './features/auth/state/selectors';
 
 const mapStateToProps = (state: RootState) => ({
   user: selectors.getUser(state),

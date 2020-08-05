@@ -2,10 +2,7 @@ import React from 'react';
 import { Form, FormikProps, Field, withFormik, ErrorMessage } from 'formik';
 import { User } from 'AuthModels';
 import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { RootState } from 'RootType';
 
-import { loginUserArticleAsync } from '../actions';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -50,23 +47,16 @@ const useStyles = makeStyles((theme) => ({
 
 type FormValues = Pick<User, 'name' | 'password'> & {};
 
-const mapStateToProps = (state: RootState) => ({
-    isLoading: state.auth.isLoadingLogin,
-    error: state.auth.error,
-});
 
-const dispatchProps = {
-    createLoginUser: (values: FormValues) =>
-        loginUserArticleAsync.request({
-            ...values
-        })
-};
-
-type Props = ReturnType<typeof mapStateToProps> & typeof dispatchProps & {
+type Props = {
+    submit: Function;
+    isLoading: boolean;
+    error: boolean;
     user?: User;
 };
 
-const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
+
+const LoginForm: React.FC<Props & FormikProps<FormValues>> = props => {
     const { isSubmitting, dirty, isLoading, error } = props;
     const classes = useStyles();
     return (
@@ -113,10 +103,6 @@ const InnerForm: React.FC<Props & FormikProps<FormValues>> = props => {
 };
 
 export default compose(
-    connect(
-        mapStateToProps,
-        dispatchProps
-    ),
     withFormik<Props, FormValues>({
         enableReinitialize: true,
         mapPropsToValues: ({ user: data }) => ({
@@ -124,8 +110,8 @@ export default compose(
             password: (data && data.password) || '',
         }),
         handleSubmit: (values, form) => {
-            form.props.createLoginUser(values);
+            form.props.submit(values);
             form.setSubmitting(false);
         },
     })
-)(InnerForm);
+)(LoginForm);
