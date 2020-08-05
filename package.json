@@ -4,8 +4,8 @@
   "description": "",
   "version": "0.1.0",
   "private": true,
-  "author": "Piotr Witek <piotrek.witek@gmail.com> (http://piotrwitek.github.io/)",
-  "repository": "",
+  "author": "Enrique Pastor Cisneros",
+  "repository": "https://github.com/epastorc/login-react/",
   "license": "MIT",
   "main": "src/index.tsx",
   "scripts": {
