@@ -1,6 +1,7 @@
 import { User, JwtToken } from 'AuthModels';
 import { app } from './firebase-conf';
 import * as localStorage from './local-storage-service';
+import loggerService from './logger-service';
 import * as decodeService from './decoder-jwt-service';
 
 export async function login(user: User): Promise<string> {
@@ -14,6 +15,7 @@ export async function login(user: User): Promise<string> {
     }
     return '';
   } catch (error) {
+    loggerService.log(error);
     throw new Error();
   }
 }
