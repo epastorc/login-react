@@ -2,19 +2,19 @@ import { combineReducers } from 'redux';
 import { createReducer } from 'typesafe-actions';
 import { FactAnimal } from 'DashboardModels';
 
-import { requestCatFacts } from './actions';
+import { requestDogFacts } from './actions';
 
 const reducer = combineReducers({
  
-  factcats: createReducer([] as FactAnimal[])
+  factdogs: createReducer([] as FactAnimal[])
   .handleAction(
-    [requestCatFacts.success],
+    [requestDogFacts.success],
     (state, action) => action.payload
   ),
   isLoading: createReducer(false as boolean)
-  .handleAction([requestCatFacts.request], (state, action) => true)
+  .handleAction([requestDogFacts.request], (state, action) => true)
   .handleAction(
-    [requestCatFacts.success, requestCatFacts.failure],
+    [requestDogFacts.success, requestDogFacts.failure],
     (state, action) => false
   )
 });

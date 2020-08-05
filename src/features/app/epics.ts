@@ -1,4 +1,4 @@
-import { RootEpic } from 'MyTypes';
+import { RootEpic } from 'RootType';
 import { tap, ignoreElements, filter } from 'rxjs/operators';
 
 import { isActionOf } from 'typesafe-actions';

@@ -1,8 +1,8 @@
 import { FactAnimal } from 'DashboardModels';
 import { createAsyncAction } from 'typesafe-actions';
 
-export const requestCatFacts = createAsyncAction(
-  'REQUEST_FACTCAT_REQUEST',
-  'REQUEST_FACTCAT_SUCCESS',
-  'REQUEST_FACTCAT_FAILURE'
+export const requestDogFacts = createAsyncAction(
+  'REQUEST_FACTDOG_REQUEST',
+  'REQUEST_FACTDOG_SUCCESS',
+  'REQUEST_FACTDOG_FAILURE'
 )<undefined, FactAnimal[], string>();

@@ -3,7 +3,7 @@ import { Form, FormikProps, Field, withFormik, ErrorMessage } from 'formik';
 import { User } from 'AuthModels';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { RootState } from 'MyTypes';
+import { RootState } from 'RootType';
 
 import { loginUserArticleAsync } from '../actions';
 import { makeStyles } from '@material-ui/core/styles';

@@ -1,8 +1,8 @@
-import { RootState } from 'MyTypes';
+import { RootState } from 'RootType';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route } from 'react-router';
+import { Route } from 'react-router';
 
 import Home from './routes/Home';
 import Main from './routes/Main';
@@ -12,21 +12,21 @@ import * as selectors from './features/auth/selectors';
 
 const mapStateToProps = (state: RootState) => ({
   user: selectors.getUser(state),
+  isSignedIn: selectors.isSignedIn(state),
 });
 const dispatchProps = {};
 
 type Props = ReturnType<typeof mapStateToProps> & typeof dispatchProps;
 
-class Routes extends Component<Props, {}> {
-
-
+class Routes extends Component<Props> {
   render() {
+    const { isSignedIn }  = this.props;
     return (
-      <Switch>
+      <div>
+        {this.props.isSignedIn}
         <Route exact path={getPath('home')} render={Home} />
-        <PrivateRoute path={getPath('main')}  isSignedIn={this.props.user.name !== ''} component={Main} />
-        <Route render={() => <div>Page not found!</div>} />
-      </Switch>
+        <PrivateRoute path={getPath('main')}  isSignedIn={isSignedIn} component={Main} />
+      </div>
     );
   }
 }

@@ -1,36 +1,14 @@
-import * as React from 'react';
-import {
-    Route,
-    Redirect,
-    RouteProps,
-} from 'react-router-dom';
 
-interface PrivateRouteProps extends RouteProps {
-    // tslint:disable-next-line:no-any
-    component: any;
-    isSignedIn: boolean;
-}
+import  React from  "react";
+import { Route } from  "react-router";
 
-const PrivateRoute = (props: PrivateRouteProps) => {
-    const { component: Component, isSignedIn, ...rest } = props;
+const  PrivateRoute: React.FC<{
+        component: any;
+        path: string;
+        isSignedIn: boolean;
+    }> = (props) => {
 
-    return (
-        <Route
-            {...rest}
-            render={(routeProps) =>
-                isSignedIn ? (
-                    <Component {...routeProps} />
-                ) : (
-                        <Redirect
-                            to={{
-                                pathname: '/',
-                                state: { from: routeProps.location }
-                            }}
-                        />
-                    )
-            }
-        />
-    );
+    const condition = props.isSignedIn;
+    return (<Route  path={condition ? props.path: '/login'} component={props.component} />);
 };
-
-export default PrivateRoute;
+export  default  PrivateRoute;

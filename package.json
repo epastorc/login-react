@@ -11,13 +11,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build:client": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "reinstall": "rm -rf ./node_modules && npm install",
-    "ci-check": "npm run prettier && npm run tsc && npm run test",
+    "ci-check": "npm run prettier && npm run tsc",
     "prettier": "prettier --list-different 'src/**/*.ts' || (echo '\nPlease run the following command to fix:\nnpm run prettier:fix\n'; exit 1)",
-    "prettier:fix": "prettier --write 'src/**/*.ts'",
-    "tsc": "tsc -p ./ --noEmit",
+    "prettier:fix": "prettier --write '**.tsx'",
+    "tsc": "tsc -p ./",
     "tsc:watch": "tsc -p ./ --noEmit -w"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { RootState } from 'MyTypes';
+import { RootState } from 'RootType';
 import MainLayout from '../layouts/MainLayout';
 import DashBoard from '../routes/Dashboard';
 import Setting from '../routes/Setting';

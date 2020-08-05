@@ -1,4 +1,4 @@
-import { RootState } from 'MyTypes';
+import { RootState } from 'RootType';
 // import { createSelector } from 'reselect';
 
 export const getFactCat = (state: RootState) => state.factcat.factcats;

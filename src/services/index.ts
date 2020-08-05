@@ -1,6 +1,6 @@
 import * as logger from './logger-service';
 import * as login from './login-service';
-import * as fatCatsService from './api/fact-cats-service';
+import FactAnimalApi from './api/fact-animal-service';
 import * as toast from './toast-service';
 import * as localStorage from './local-storage-service';
 
@@ -10,6 +10,6 @@ export default {
   toast,
   api: {
     login,
-    fatCatsService
+    FactAnimalApi
   },
 };

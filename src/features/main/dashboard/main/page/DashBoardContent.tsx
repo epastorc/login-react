@@ -1,4 +1,4 @@
-import { RootState } from 'MyTypes';
+import { RootState } from 'RootType';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -11,8 +11,7 @@ import FactCatList from '../components/FactCatList';
 
 const mapStateToProps = (state: RootState) => ({
     factcat: selectors.getFactCat(state),
-    isLoading: selectors.isLoading(state),
-    getFactCat: () => requestCatFacts.request()
+    isLoading: selectors.isLoading(state)
 });
 const dispatchProps = {
     getFactCat: () => requestCatFacts.request()

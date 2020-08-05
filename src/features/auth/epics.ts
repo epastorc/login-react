@@ -1,4 +1,4 @@
-import { RootEpic } from 'MyTypes';
+import { RootEpic } from 'RootType';
 import { from, of } from 'rxjs';
 import { filter, switchMap, map, catchError } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';

@@ -1,4 +1,4 @@
-import { RootAction, RootState, Services } from 'MyTypes';
+import { RootAction, RootState, Services } from 'RootType';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import { createBrowserHistory } from 'history';

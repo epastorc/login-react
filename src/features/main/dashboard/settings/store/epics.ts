@@ -4,7 +4,7 @@ import { filter, switchMap, map, catchError } from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 
 import {
-  requestCatFacts
+  requestDogFacts
 } from './actions';
 
 
@@ -13,11 +13,11 @@ import {
 
 export const createAuthEpic: RootEpic = (action$, state$, { api }) =>
   action$.pipe(
-    filter(isActionOf(requestCatFacts.request)),
+    filter(isActionOf(requestDogFacts.request)),
     switchMap(action =>
-      from(api.FactAnimalApi.getFactCat()).pipe(
-        map(requestCatFacts.success),
-        catchError(message => of(requestCatFacts.failure(message)))
+      from(api.FactAnimalApi.getFactDog()).pipe(
+        map(requestDogFacts.success),
+        catchError(message => of(requestDogFacts.failure(message)))
       )
     )
   );

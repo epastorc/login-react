@@ -1,5 +1,5 @@
 declare module 'DashboardModels' {
-    export type FactCat = {
+    export type FactAnimal  = {
       text: string;
     };
   }
