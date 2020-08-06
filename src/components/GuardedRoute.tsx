@@ -9,8 +9,23 @@ type Props = {
   };
 
 const  GuardedRoute: React.FC<Props> = (props) => {
-    const condition = props.isSignedIn;
-    return condition ? (<Route  path={props.path} component={props.component} />) : 
-    (<Redirect  to="/"  />);
+    const { component: Component, isSignedIn, ...rest } = props;
+    return (
+        <Route
+            {...rest}
+            render={(routeProps) =>
+                isSignedIn ? (
+                    <Component {...routeProps} />
+                ) : (
+                        <Redirect
+                            to={{
+                                pathname: '/',
+                                state: { from: routeProps.location }
+                            }}
+                        />
+                    )
+            }
+        />
+    );
 };
 export  default  GuardedRoute;
