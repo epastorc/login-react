@@ -2,7 +2,7 @@
 
 - Node version: 10.13.0 or others compatible
 - Install the node dependencies
-- Add firebase environment variables (The values are not included in the repository)
+- Add firebase environment variables (The values are not included in the repository) in the .env file
 ```shell
 REACT_APP_FIREBASE_APIKEY
 REACT_APP_FIREBASE_AUTHDOMAIN

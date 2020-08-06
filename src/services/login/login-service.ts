@@ -4,6 +4,8 @@ import { app } from './firebase-conf';
 import * as localStorage from '../storage/local-storage-service';
 import loggerService from '../logger/logger-service';
 import * as decodeService from '../jwt/decoder-jwt-service';
+import TokenNotFound from '../error/TokenNotFound';
+import AuthenticationError from '../error/AuthenticationError';
 
 export async function login(user: User): Promise<string> {
   try {
@@ -17,7 +19,7 @@ export async function login(user: User): Promise<string> {
     return '';
   } catch (error) {
     loggerService.log(error);
-    throw new Error();
+    throw new AuthenticationError();
   }
 }
 
@@ -27,6 +29,6 @@ export async function loadUser(): Promise<User> {
     const parseToken: JwtToken = decodeService.decode(token);
     return { name: parseToken.email, password: '' };
   }else {
-    throw new Error();
+    throw new TokenNotFound();
   }
 }
