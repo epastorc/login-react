@@ -1,8 +1,8 @@
 ## Installation and Setup
 
-- Node version: 10.13.0 or other compatibles
+- Node version: 10.13.0 or others compatible
 - Install the node dependencies
-- Add firebase environment variables
+- Add firebase environment variables (The values are not included in the repository)
 ```shell
 REACT_APP_FIREBASE_APIKEY
 REACT_APP_FIREBASE_AUTHDOMAIN
@@ -27,16 +27,19 @@ REACT_APP_FIREBASE_APPID
 - Settings
     - The view is private. It only can be accessed if the user is logged. The view shows a list of the fact about dogs. This information is requested to an API.
 ## Documentation
-### Structure
+### Overview
     -src/
-    -- components -> Contains the generic GuardRoute (This layer only should contain stateless components that are used by app or several features)
-    -- features -> Implementation of the use cases (state, actions, reducers, component(visual components), page(page controller) and types)
+    -- components -> Contains the generic GuardRoute (This layer only should contain stateless components that are used by app or some features)
+    -- features -> Implementation of the use cases (state, actions, async actions, reducers, component(visual components), page(page controller) and types)
     -- layout -> Contains the layout that is used in the dashboard page with the navbar.
     -- service -> It is the infrastructure layer() api, login, localstorage services, etc.)
-    -- store -> The configuration of the root state.
+    -- store -> The configuration of the root state, root reducer, generic types for actions.
     -- Route.tsx -> Route component
     -- router-paths.ts -> get the string path of each route.(For instance : home -> '/') 
    
 The structure is based on this repository (https://github.com/piotrwitek/react-redux-typescript-realworld-app)
 
+### External providers
+    -Firebase -> login(username/password)
+    -API (https://cat-fact.herokuapp.com/#/) -> for getting information of facts about cats and dogs
 
